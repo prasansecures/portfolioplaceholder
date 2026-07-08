@@ -4,7 +4,7 @@ const STATS = [
   { v: <><em>$</em>2.5M</>, l: 'seed raised by ARlink\n· HH2 graduate' },
   { v: <>349<em>+</em></>, l: 'attendees ·\narweave day india' },
   { v: <>4000<em>+</em></>, l: 'builders reached\n· city debriefs' },
-  { v: <>3<em>yr</em></>, l: 'building the\narweave india program' },
+  { v: <>3<em>yr</em></>, l: 'building the Arweave\nAsia operations system' },
 ];
 
 export default function StatsStrip() {
