@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>prasansingh.com — wireframes (print)</title>
+
+  <!-- Handwritten / sketchy fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@400;700&family=Cutive+Mono&family=Indie+Flower&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&family=Shadows+Into+Light+Two&family=Special+Elite&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===== Print-to-paper reflow ===== */
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    @page { size: letter; margin: 0; }
+
+    @media print {
+      html, body { overflow: visible !important; }
+      body { padding: 0.5in 0.6in; }
+
+      /* boot overlay + tweaks panel are screen-only chrome */
+      .boot-overlay { display: none !important; }
+      .tweaks-panel, .tweaks-launcher, [data-tweaks-panel] { display: none !important; }
+
+      /* reflow the fixed centered column to fill the printable width */
+      .direction {
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* sticky nav becomes static flow */
+      .tab-bar { position: static !important; backdrop-filter: none !important; }
+
+      /* keep units whole, let the browser paginate between them */
+      .wf-section { break-inside: avoid; margin-bottom: 28px !important; }
+      .section-title, .section-label { break-after: avoid; }
+      .polaroid, .sketch-box, .impact-chip, .receipt, .sticky, figure { break-inside: avoid; }
+      p, li { orphans: 3; widows: 3; }
+
+      /* freeze animations at their end state instead of reverting to hidden */
+      *, *::before, *::after {
+        animation-delay: -99s !important;
+        animation-duration: .001s !important;
+        animation-iteration-count: 1 !important;
+        animation-fill-mode: both !important;
+        animation-play-state: running !important;
+        transition-duration: 0s !important;
+      }
+      .wf-section.pre-reveal { opacity: 1 !important; transform: none !important; }
+
+      /* spinning disc / marquee frozen */
+      .disc { animation: none !important; }
+      .ticker .track { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React + Babel (pinned) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- Image slots (drag-and-drop photos; persists drops) -->
+  <script src="image-slot.js"></script>
+
+  <!-- Tweaks panel must load first so window.useTweaks etc. exist -->
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+
+  <!-- Shared primitives -->
+  <script type="text/babel" src="shared.jsx"></script>
+
+  <!-- Chosen direction: Scrapbook -->
+  <script type="text/babel" src="direction2.jsx"></script>
+
+  <!-- App shell -->
+  <script type="text/babel" src="app.jsx"></script>
+
+  <script type="text/babel" data-presets="env,react">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+
+  <!-- Auto-print once React has mounted, fonts loaded, images decoded -->
+  <script>
+    addEventListener('load', () => {
+      (async () => {
+        // wait for React to render the section content
+        const start = Date.now();
+        while (Date.now() - start < 8000) {
+          if (document.querySelectorAll('#root .wf-section').length > 0) break;
+          await new Promise((r) => setTimeout(r, 100));
+        }
+        try { await document.fonts.ready; } catch (e) {}
+        const imgs = Array.from(document.images).filter((i) => !i.complete);
+        await Promise.race([
+          Promise.allSettled(imgs.map((i) => i.decode())),
+          new Promise((r) => setTimeout(r, 8000)),
+        ]);
+        setTimeout(() => window.print(), 600);
+      })();
+    });
+  </script>
+</body>
+</html>

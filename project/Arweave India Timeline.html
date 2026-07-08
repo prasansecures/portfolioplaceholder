@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>arweave india — the 2.5-year arc</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&amp;family=Caveat:wght@400;700&amp;family=Kalam:wght@300;400;700&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .tl-wrap { max-width: 920px; }
+    .tl-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 8px 0 12px;
+      font-weight: normal;
+    }
+    .tl-sub { font-size: 17px; max-width: 62ch; line-height: 1.5; margin: 0; }
+    .tl-band {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 26px 0 8px;
+    }
+    .tl-band .chip {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+      padding: 8px 14px;
+      border: 1.5px solid var(--ink);
+      background: var(--paper);
+      box-shadow: 3px 4px 0 var(--shadow);
+    }
+    .tl-band .chip b {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--red);
+      font-weight: normal;
+      line-height: 1;
+    }
+    .tl {
+      position: relative;
+      margin: 36px 0 10px;
+      padding-left: 30px;
+      border-left: 2px dashed var(--ink);
+    }
+    .tl-year {
+      font-family: var(--font-display);
+      font-size: 30px;
+      color: var(--red);
+      margin: 30px 0 4px;
+      position: relative;
+    }
+    .tl-year:first-child { margin-top: 0; }
+    .tl-year .era { font-family: var(--font-label); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); margin-left: 10px; }
+    .tl-item { position: relative; padding: 9px 0; }
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -36px;
+      top: 18px;
+      width: 11px;
+      height: 11px;
+      background: var(--red);
+      border: 1.5px solid var(--ink);
+      transform: rotate(-6deg);
+    }
+    .tl-date {
+      font-family: var(--font-label);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .tl-t { font-size: 17px; font-weight: 700; }
+    .tl-b { font-size: 15px; margin: 2px 0 0; color: var(--ink-2); }
+    a.tl-link {
+      font-family: var(--font-label);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    a.tl-link:hover { text-decoration: underline; }
+    .tl-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .tl-proves { margin-top: 34px; background: var(--paper-2); }
+    .tl-proves ul { margin: 8px 0 0; padding-left: 20px; font-size: 16px; line-height: 1.6; }
+    .tl-cta { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin: 30px 0 10px; }
+    .tl-back { margin-bottom: 18px; }
+    .tl-nav-current { font-weight: 700; border-bottom: 2px solid var(--red); }
+    @media print {
+      .no-print { display: none !important; }
+      body::before, body::after { display: none !important; }
+      .direction { padding: 16px 0; }
+      .tl-item { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="direction tl-wrap" data-screen-label="arweave india timeline one-pager">
+
+    <div class="mock-nav no-print" data-comment-anchor="06a72b8d63-div-133-5">
+      <a href="./prasansingh wireframes.html" class="logo" style="text-decoration: none; color: inherit;">prasan<span style="color: var(--red);">*</span></a>
+      <div class="links">
+        <a href="./subpages.html#community" style="text-decoration: none; color: inherit;">Community</a>
+        <a href="./subpages.html#work" style="text-decoration: none; color: inherit;">Work</a>
+        <a href="./subpages.html#writing" style="text-decoration: none; color: inherit;">Writing</a>
+        <a href="./subpages.html#library" style="text-decoration: none; color: inherit;">Library</a>
+        <a href="./subpages.html#archive" style="text-decoration: none; color: inherit;">Archive</a>
+        <a href="./subpages.html#lets-talk" class="cta" style="text-decoration: none; color: inherit;">Let's Talk</a>
+      </div>
+      <div class="right">
+        <a href="https://x.com/prasansinghh" target="_blank" rel="noreferrer" class="nav-icon" title="dm on x · @prasansinghh">𝕏</a>
+        <a href="https://www.linkedin.com/in/prasan-singh" target="_blank" rel="noreferrer" class="nav-icon" title="linkedin · prasan-singh" style="transform: rotate(1deg);">in</a>
+      </div>
+    </div>
+
+    <header>
+      <div class="kicker" style="color: var(--red);">prasansingh.com · one-pager · print-friendly</div>
+      <h1 class="tl-h1">arweave india · <span class="underline">the 2.5-year arc</span></h1>
+      <p class="tl-sub">how an ecosystem got built, one room at a time — from the first launchpad cohort to a 349-person flagship conference. designed and run by prasan. every milestone links to the public record.</p>
+    </header>
+
+    <div class="tl-band">
+      <span class="chip"><b>5</b> <span class="kicker">hacker houses</span></span>
+      <span class="chip"><b>150+</b> <span class="kicker">scholars · 1500+ applications</span></span>
+      <span class="chip"><b>$2.5M</b> <span class="kicker">seed · ARlink</span></span>
+      <span class="chip"><b>349+</b> <span class="kicker">attendees · ADI</span></span>
+      <span class="chip"><b>4000+</b> <span class="kicker">reached · debriefs</span></span>
+      <span class="chip"><b>2,595</b> <span class="kicker">posts · public log</span></span>
+    </div>
+
+    <div class="tl">
+      <div class="tl-year">2023 <span class="era">the setup</span></div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">jun '23</span><a class="tl-link" href="https://x.com/arweaveindia" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">@arweaveindia goes live</div>
+        <p class="tl-b">the public log starts. everything after this is documented in real time.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">oct '23</span><a class="tl-link" href="https://x.com/arweaveindia/status/1761416353955877299" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">launchpad · cohort 1</div>
+        <p class="tl-b">3-month founder program — quest-based learning, investor access, community support.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">nov '23</span><a class="tl-link" href="https://x.com/arweaveindia/status/1744783197484020144" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">AO office hours w/ sam williams</div>
+        <p class="tl-b">founder guidance, piped straight into the cohort.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">dec '23</span><a class="tl-link" href="https://x.com/arweaveindia/status/1732826171128357146" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">the winston awards · edition '23</div>
+        <p class="tl-b">culture, kept on purpose — from year one.</p>
+      </div>
+
+      <div class="tl-year">2024 <span class="era">the houses</span></div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">feb '24</span><a class="tl-link" href="https://x.com/arweaveindia/status/1888186271182504009" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">AO mainnet launch + india tour</div>
+        <p class="tl-b">multi-city launch celebration and education.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">mar '24</span><a class="tl-link" href="https://x.com/arweaveindia/status/1771120704555233743" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">HH1 · bangalore — the first house</div>
+        <p class="tl-b">BetterIDEa, 0rbit and LiteSeed all trace back to this room.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">jun '24</span><a class="tl-link" href="https://x.com/arweaveindia/status/1826639493417631960" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">HH2 · dev tools cohort</div>
+        <p class="tl-b">ARlink demos one-click permaweb deploys. six months later: a $2.5M seed.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">sep '24</span><a class="tl-link" href="https://x.com/arweaveindia/status/1863306756295622701" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">HH3 · mussoorie — touchgrass</div>
+        <p class="tl-b">4-day format. wellness became program infrastructure, not garnish.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">sep '24</span><a class="tl-link" href="https://x.com/arweaveindia/status/1777618288958460195" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">debrief series announced</div>
+        <p class="tl-b">multi-city knowledge share: bangalore, hyderabad, vadodara, mumbai area.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">oct–dec '24</span><a class="tl-link" href="https://x.com/arweaveindia" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">patch notes 2.1 + 2.2</div>
+        <p class="tl-b">transparent long-form updates on program progress, as X articles.</p>
+      </div>
+
+      <div class="tl-year">2025 <span class="era">the flagship</span></div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">mar '25</span><a class="tl-link" href="https://x.com/arweaveindia/status/1900198767690997842" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">ADI pre-event tour + city debriefs</div>
+        <p class="tl-b">multi-city run (incl. bhopal) — 4000+ builders reached across the debrief circuit.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">apr '25</span><a class="tl-link" href="https://x.com/arweaveindia/status/1915426565326029130" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">Singapore HH · the consumer wave</div>
+        <p class="tl-b">mature cohort — user-facing apps on mainnet.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">apr '25</span><a class="tl-link" href="https://x.com/arweaveindia/status/1916023194818859477" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">arweave day india — "the permaweb is here"</div>
+        <p class="tl-b">349+ attendees · sam williams keynote · $20k+ buildathon · 2-day flagship conference.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">sep '25</span></div>
+        <div class="tl-t">stealth house · 13-day product sprint</div>
+        <p class="tl-b">investors and wild thinkers in one room. 10 products shipped.</p>
+      </div>
+
+      <div class="tl-year">now <span class="era">what's next</span></div>
+      <div class="tl-item">
+        <div class="tl-row"><span class="tl-date">'26</span><a class="tl-link" href="https://x.com/prasansinghh" target="_blank" rel="noreferrer">open ↗</a></div>
+        <div class="tl-t">the winston show · vlogs · humanity &amp; heritage</div>
+        <p class="tl-b">the content arm — and the search for the next long-term project.</p>
+      </div>
+    </div>
+
+    <div class="sketch-box tl-proves">
+      <span class="kicker">what this arc proves</span>
+      <ul>
+        <li>a <strong>replicable model</strong> — five different programs for five ecosystem moments, not the same hackathon five times.</li>
+        <li><strong>follow-through as infrastructure</strong> — the $2.5M seed closed six months <em>after</em> demo day. that gap is the product.</li>
+        <li><strong>documented in public</strong> — 2,595 posts of real-time record. nothing here is retroactive storytelling.</li>
+      </ul>
+    </div>
+
+    <div class="tl-cta no-print">
+      <a class="cta-btn" href="https://cal.com/prasan-singh/15min" target="_blank" rel="noreferrer">book 15 min →</a>
+      <a class="cta-btn alt" href="https://x.com/prasansinghh" target="_blank" rel="noreferrer">dm @prasansinghh →</a>
+    </div>
+    <p class="kicker no-print" style="text-align: center;">print this page for the pdf version · cmd/ctrl + p</p>
+
+  </div>
+</body>
+</html>

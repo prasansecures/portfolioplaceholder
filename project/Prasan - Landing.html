@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prasan Singh — ecosystem architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f4efe6;
+    --paper-2: #ece5d8;
+    --ink: #191512;
+    --ink-soft: #6b6255;
+    --accent: #cf3c22;
+    --line: rgba(25,21,18,0.16);
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "Space Grotesk", system-ui, sans-serif;
+    --mono: "Space Mono", ui-monospace, monospace;
+    --edge: clamp(20px, 5vw, 84px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(25,21,18,0.04) 1px, transparent 1px);
+    background-size: 4px 4px; opacity: 0.6;
+  }
+  a { color: inherit; }
+  a.link { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s; }
+  a.link:hover { border-color: var(--accent); }
+  .wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 var(--edge); }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+
+  /* top bar */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(8px);
+    background: color-mix(in srgb, var(--paper) 82%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .brand { font-family: var(--mono); font-weight: 700; letter-spacing: 0.04em; font-size: 15px; }
+  .brand span { color: var(--accent); }
+  .bar-right { display: flex; align-items: center; gap: 18px; }
+  .avail { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); animation: pulse 2.2s infinite; }
+  @keyframes pulse { 0%{ box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent);} 70%{ box-shadow:0 0 0 7px transparent;} 100%{ box-shadow:0 0 0 0 transparent;} }
+  .btn {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 9px 16px; background: var(--ink); color: var(--paper); text-decoration: none;
+    transition: transform .15s, background .2s;
+  }
+  .btn:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+
+  /* hero */
+  .hero { padding: clamp(60px, 11vh, 130px) 0 clamp(50px, 8vh, 90px); }
+  .eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  h1.lede {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(46px, 8.4vw, 116px); line-height: 0.98; letter-spacing: -0.015em;
+  }
+  h1.lede em { font-style: italic; color: var(--accent); }
+  .hero-sub {
+    margin-top: 30px; max-width: 46ch; font-size: clamp(17px, 1.5vw, 21px);
+    color: var(--ink-soft); line-height: 1.5;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 500; }
+  .roles { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .role { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; padding: 7px 13px; border: 1px solid var(--line); background: var(--paper-2); }
+  .hero-cta { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+  /* impact marquee strip */
+  .strip { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--ink); color: var(--paper); }
+  .strip-inner { display: grid; grid-template-columns: repeat(6, 1fr); }
+  .stat { padding: 26px 22px; border-right: 1px solid rgba(244,239,230,0.16); }
+  .stat:last-child { border-right: none; }
+  .stat .v { font-family: var(--serif); font-size: clamp(34px, 4vw, 52px); line-height: 1; color: var(--paper); }
+  .stat .v em { color: var(--accent); font-style: normal; }
+  .stat .l { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(244,239,230,0.62); margin-top: 12px; line-height: 1.5; }
+
+  /* section scaffold */
+  section.blk { padding: clamp(56px, 9vh, 104px) 0; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
+  .sec-title { font-family: var(--serif); font-size: clamp(30px, 4vw, 52px); letter-spacing: -0.01em; line-height: 1; }
+  .sec-num { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--accent); }
+
+  /* work list */
+  .work { border-top: 1px solid var(--line); }
+  .work-row {
+    display: grid; grid-template-columns: 0.9fr 1.5fr auto; gap: 24px; align-items: baseline;
+    padding: 26px 4px; border-bottom: 1px solid var(--line); text-decoration: none;
+    transition: padding-left .25s, background .25s;
+  }
+  .work-row:hover { padding-left: 20px; background: var(--paper-2); }
+  .work-name { font-family: var(--serif); font-size: clamp(26px, 3vw, 40px); line-height: 1; }
+  .work-desc { color: var(--ink-soft); font-size: 15.5px; }
+  .work-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+  .work-tag .win { color: var(--accent); }
+  .work-arrow { transition: transform .25s; display: inline-block; }
+  .work-row:hover .work-arrow { transform: translate(4px,-4px); }
+
+  /* pillars */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
+  .pillar { padding: 34px 30px; border-right: 1px solid var(--line); }
+  .pillar:last-child { border-right: none; }
+  .pillar .pn { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.14em; }
+  .pillar h3 { font-family: var(--serif); font-weight: 400; font-size: 30px; margin: 14px 0 10px; line-height: 1.05; }
+  .pillar p { color: var(--ink-soft); font-size: 15.5px; }
+
+  /* programs chips */
+  .progs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .prog { padding: 12px 18px; border: 1px solid var(--line); font-size: 15px; background: var(--paper-2); }
+  .prog b { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 3px; }
+
+  /* contact */
+  .contact { border-top: 1px solid var(--ink); }
+  .contact-in { padding: clamp(60px,10vh,120px) 0; }
+  .contact h2 { font-family: var(--serif); font-size: clamp(40px, 7vw, 96px); line-height: 0.98; letter-spacing: -0.015em; max-width: 15ch; }
+  .contact h2 em { font-style: italic; color: var(--accent); }
+  .channels { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 12px 14px; }
+  footer { border-top: 1px solid var(--line); padding: 24px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  /* reveal */
+  .rv { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } .dot { animation: none; } }
+
+  @media (max-width: 860px) {
+    .strip-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid rgba(244,239,230,0.16); }
+    .stat:nth-child(2n) { border-right: none; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { border-right: none; border-bottom: 1px solid var(--line); }
+    .pillar:last-child { border-bottom: none; }
+    .work-row { grid-template-columns: 1fr; gap: 8px; }
+    .work-tag { order: -1; }
+    .bar-right .avail { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand">prasan<span>*</span>singh</div>
+    <div class="bar-right">
+      <span class="avail"><span class="dot"></span> open to work</span>
+      <a class="btn" href="https://cal.com/prasan-singh/15min" target="_blank" rel="noreferrer">Book 15 min →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="eyebrow rv"><span class="mono">Ecosystem architect · community &amp; events</span></div>
+    <h1 class="lede rv">I build founder<br />ecosystems that turn<br />builders into <em>funded teams.</em></h1>
+    <p class="hero-sub rv">I built <strong><a class="link" href="https://arweaveindia.com" target="_blank" rel="noreferrer">Arweave India</a></strong> — four hacker houses, incubation programs designed around the projects, and flagship events across Asia — the community systems shaping how a global ecosystem grows.</p>
+    <div class="roles rv">
+      <span class="mono" style="color:var(--accent)">open to</span>
+      <span class="role">ecosystem lead</span>
+      <span class="role">global events lead</span>
+      <span class="role">community lead</span>
+      <span class="role">events &amp; ops</span>
+    </div>
+    <div class="hero-cta rv">
+      <a class="btn" href="https://cal.com/prasan-singh/15min" target="_blank" rel="noreferrer">Book 15 min →</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/prasan-singh" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn ghost" href="https://x.com/prasansinghh" target="_blank" rel="noreferrer">DM on 𝕏</a>
+    </div>
+  </section>
+
+  <div class="strip rv">
+    <div class="strip-inner wrap" style="padding-top:0;padding-bottom:0">
+      <div class="stat"><div class="v">4</div><div class="l">hacker houses &amp;<br />incubation launchpads</div></div>
+      <div class="stat"><div class="v">150<em>+</em></div><div class="l">scholars from<br />1500+ applications</div></div>
+      <div class="stat"><div class="v"><em>$</em>2.5M</div><div class="l">seed raised by ARlink<br />· HH2 graduate</div></div>
+      <div class="stat"><div class="v">349<em>+</em></div><div class="l">attendees ·<br />arweave day india</div></div>
+      <div class="stat"><div class="v">4000<em>+</em></div><div class="l">builders reached<br />· city debriefs</div></div>
+      <div class="stat"><div class="v">3<em>yr</em></div><div class="l">building the<br />arweave india program</div></div>
+    </div>
+  </div>
+
+  <section class="blk wrap">
+    <div class="sec-head rv">
+      <div class="sec-title">Events</div>
+      <span class="sec-num">/ 01 — proof</span>
+    </div>
+    <p class="mono rv" style="margin:-24px 0 34px; text-transform:none; letter-spacing:0.02em; font-size:13px; color:var(--ink-soft)">Recent events from my time at Arweave India.</p>
+    <div class="work rv">
+      <a class="work-row" href="https://x.com/aoTheComputer/status/1980603767822201003?s=20" target="_blank" rel="noreferrer">
+        <div class="work-name">Hacker Houses</div>
+        <div class="work-desc">4 incubation-led residency programs. Alumni include ARlink ($2.5M seed), plus BetterIDEa &amp; 0rbit — acquired by the foundation.</div>
+        <div class="work-tag"><span class="win">4 houses · 150+ scholars</span> <span class="work-arrow">↗</span></div>
+      </a>
+      <a class="work-row" href="https://x.com/arweaveindia/status/1968299806788604234?s=20" target="_blank" rel="noreferrer">
+        <div class="work-name">Stealth House</div>
+        <div class="work-desc">A 13-day shipping sprint — ~12 builders, strangers to a team, ten products out the door.</div>
+        <div class="work-tag">10 ships · 13 days <span class="work-arrow">↗</span></div>
+      </a>
+      <a class="work-row" href="https://x.com/arweaveindia" target="_blank" rel="noreferrer">
+        <div class="work-name">Arweave Day India</div>
+        <div class="work-desc">The flagship conference — 349+ attendees, Sam Williams keynote, two days.</div>
+        <div class="work-tag"><span class="win">flagship · 349+</span> <span class="work-arrow">↗</span></div>
+      </a>
+      <a class="work-row" href="https://x.com/arweaveindia/status/1915426565326029130" target="_blank" rel="noreferrer">
+        <div class="work-name">Singapore Hacker House</div>
+        <div class="work-desc">The consumer wave — a mature cohort shipping user-facing apps on mainnet.</div>
+        <div class="work-tag">consumer wave · 2025 <span class="work-arrow">↗</span></div>
+      </a>
+    </div>
+    <div style="margin-top:20px" class="rv">
+      <span class="mono">+ launchpad cohorts, city debriefs &amp; side events · </span>
+      <a class="link mono" href="https://x.com/arweaveindia" target="_blank" rel="noreferrer">the full public log ↗</a>
+    </div>
+  </section>
+
+  <section class="blk wrap" style="padding-top:0">
+    <div class="sec-head rv">
+      <div class="sec-title">What I do</div>
+      <span class="sec-num">/ 02 — the work</span>
+    </div>
+    <div class="pillars rv">
+      <div class="pillar">
+        <div class="pn">01</div>
+        <h3>Ecosystem strategy</h3>
+        <p>The thesis, the funnel, the map — where builders come from, and where they go next.</p>
+      </div>
+      <div class="pillar">
+        <div class="pn">02</div>
+        <h3>Programs &amp; events</h3>
+        <p>Hacker houses, residencies, flagship conferences. Designed and run end to end.</p>
+      </div>
+      <div class="pillar">
+        <div class="pn">03</div>
+        <h3>Community storytelling</h3>
+        <p>Public archives, video, and rituals that keep people coming back.</p>
+      </div>
+    </div>
+    <div class="progs rv" style="margin-top:24px">
+      <div class="prog"><b>200+ events, internationally</b>hackathons · conferences · hacker houses · demo days · dinners · touchgrass</div>
+      <div class="prog"><b>Launchpad</b>3-month incubation · 40+ founders</div>
+      <div class="prog"><b>20+ speaker sessions</b>keynotes · guest lectures · mentoring</div>
+      <div class="prog"><b>Country-wide event tours</b>Bangalore · Hyderabad · Vadodara</div>
+    </div>
+  </section>
+</main>
+
+<section class="contact">
+  <div class="contact-in wrap">
+    <div class="sec-num rv" style="margin-bottom:20px">/ 03 — let's talk</div>
+    <h2 class="rv">Need the next ecosystem program, flagship event, or community engine <em>built?</em></h2>
+    <div class="channels rv">
+      <a class="btn" href="https://cal.com/prasan-singh/15min" target="_blank" rel="noreferrer">Book 15 min →</a>
+      <a class="btn ghost" href="mailto:hi@prasansingh.com">hi@prasansingh.com</a>
+      <a class="btn ghost" href="https://x.com/prasansinghh" target="_blank" rel="noreferrer">𝕏 @prasansinghh</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/prasan-singh" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn ghost" href="https://t.me/prasansinghh" target="_blank" rel="noreferrer">Telegram</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <footer>
+      <span class="mono">Prasan Singh — © 2026</span>
+      <span class="mono">placeholder · full site in progress</span>
+    </footer>
+  </div>
+</section>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  const els = [...document.querySelectorAll('.rv')];
+  els.forEach((el, i) => {
+    // stagger the hero reveals on load
+    if (el.getBoundingClientRect().top < window.innerHeight) el.style.transitionDelay = (i * 70) + 'ms';
+    obs.observe(el);
+  });
+  // failsafe
+  setTimeout(() => els.forEach((el) => el.classList.add('in')), 2500);
+</script>
+</body>
+</html>
