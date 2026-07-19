@@ -34,11 +34,20 @@ export default function Hero() {
         <a className="btn" href="https://cal.com/prasan-singh/15min" target="_blank" rel="noreferrer">
           Book 15 min →
         </a>
+        <a className="btn ghost" href="./Prasan Singh - CV (Simple).html">
+          View CV →
+        </a>
+        <a
+          className="btn ghost"
+          href="https://x.com/prasansinghh"
+          target="_blank"
+          rel="noreferrer"
+          style={{ backgroundColor: '#191512', color: '#F4EEE5' }}
+        >
+          DM on 𝕏
+        </a>
         <a className="btn ghost" href="https://www.linkedin.com/in/prasan-singh" target="_blank" rel="noreferrer">
           LinkedIn
-        </a>
-        <a className="btn ghost" href="https://x.com/prasansinghh" target="_blank" rel="noreferrer">
-          DM on 𝕏
         </a>
       </div>
     </section>
