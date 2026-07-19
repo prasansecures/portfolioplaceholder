@@ -30,7 +30,7 @@ const WORK = [
     ),
   },
   {
-    href: 'https://x.com/arweaveindia/status/1915426565326029130',
+    href: 'https://x.com/aoTheComputer/status/1974173677647192441?s=20',
     name: 'Singapore Hacker House',
     desc: 'The consumer wave — a mature cohort shipping user-facing apps on mainnet.',
     tag: (
