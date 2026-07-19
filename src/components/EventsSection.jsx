@@ -20,7 +20,7 @@ const WORK = [
     ),
   },
   {
-    href: 'https://x.com/arweaveindia',
+    href: 'https://x.com/arweaveindia/status/1920122115421802771?s=20',
     name: 'Arweave Day India',
     desc: 'The flagship conference — 349+ attendees, Sam Williams keynote, two days.',
     tag: (
