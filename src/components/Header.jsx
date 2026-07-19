@@ -3,7 +3,7 @@ export default function Header() {
     <header>
       <div className="wrap bar">
         <div className="brand">
-          prasan<span>*</span>singh
+          Prasan<span>*</span>Singh
         </div>
         <div className="bar-right">
           <span className="avail">
