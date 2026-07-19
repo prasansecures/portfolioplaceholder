@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prasan Singh — CV</title>
+<meta name="description" content="Prasan Singh — ecosystem architect. CV / résumé." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #5a5a5a;
+    --line: #d8d8d8;
+    --accent: #1f4e8f;
+    --page-w: 8.5in;
+    --page-margin: 0.7in;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #ece8dd;
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--ink);
+    padding: 48px 24px;
+    min-width: max-content;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .back-link {
+    display: block;
+    width: var(--page-w);
+    margin: 0 auto 16px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .back-link a { color: inherit; }
+  .back-link a:hover { color: var(--accent); }
+
+  .sheet {
+    width: var(--page-w);
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(20, 20, 19, 0.12);
+    border-radius: 2px;
+    padding: var(--page-margin);
+  }
+
+  .cv-header { margin-bottom: 20px; }
+  .cv-name { font-size: 30px; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .cv-role { font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .cv-contact { font-size: 13px; color: var(--ink-soft); }
+  .cv-contact span:not(:last-child)::after { content: "  •  "; color: var(--line); }
+
+  .cv-section { margin-bottom: 18px; break-inside: avoid; }
+  .cv-h {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  .summary { font-size: 13.5px; line-height: 1.55; margin: 0; color: var(--ink); }
+
+  .job { margin-bottom: 12px; break-inside: avoid; }
+  .job:last-child { margin-bottom: 0; }
+  .job-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .job-title { font-weight: 600; font-size: 14px; }
+  .job-org { color: var(--ink-soft); }
+  .job-date { font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
+  .job ul { margin: 5px 0 0; padding-left: 16px; font-size: 13px; line-height: 1.5; }
+  .job li { margin-bottom: 2px; orphans: 3; widows: 3; }
+  .job li b { font-weight: 600; }
+  .job li ul { margin-top: 2px; }
+
+  .skills-line { font-size: 13px; line-height: 1.7; }
+
+  .edu-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 4px; flex-wrap: wrap; }
+  .edu-row .what { font-weight: 600; }
+  .edu-row .where { color: var(--ink-soft); }
+
+  .impact-line { display: flex; gap: 22px; font-size: 12.5px; color: var(--ink-soft); flex-wrap: wrap; line-height: 1.2; }
+  .impact-line b { color: var(--ink); font-weight: 700; }
+
+  @media print {
+    @page { size: letter; margin: var(--page-margin); }
+    body { background: none; padding: 0; min-width: 0; }
+    .back-link { display: none; }
+    .sheet { width: auto; box-shadow: none; border-radius: 0; padding: 0; }
+    h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+    p, li { orphans: 3; widows: 3; }
+  }
+</style>
+</head>
+<body>
+
+<div class="back-link"><a href="./">← Back to prasansingh.com</a></div>
+
+<main class="sheet">
+
+  <div class="cv-header">
+    <div class="cv-name">Prasan Singh</div>
+    <div class="cv-role">Ecosystem Architect, Community, Incubation &amp; Events</div>
+    <div class="cv-contact">
+      <span>hi@prasansingh.com</span>
+      <span><a href="https://linkedin.com/in/prasan-singh/">Linkedin</a></span>
+      <span><a href="https://x.com/prasansinghh">X</a></span>
+      <span><a href="https://prasansingh.com">prasansingh.com</a></span>
+    </div>
+  </div>
+
+  <div class="cv-section">
+    <div class="cv-h">Summary</div>
+    <p class="summary">Ecosystem architect with 8 years building tech-focused global and regional communities, spanning cybersecurity research and Web3 ecosystem development. Proven track record designing and running end-to-end community, incubation and event programs across the APAC region, and mentoring or judging 40+ hackathons at leading universities worldwide.</p>
+    <div class="impact-line" style="margin-top:8px;">
+      <div><b>8 yrs</b> tech community &amp; ecosystem work</div>
+      <div><b>16,000+</b> participants across events</div>
+      <div><b>200+</b> events globally</div>
+      <div><b>4</b> hacker houses &amp; incubations</div>
+      <div><b>40+</b> hackathons mentored &amp; judged</div>
+      <div><b>20+</b> speaker sessions</div>
+    </div>
+  </div>
+
+  <div class="cv-section">
+    <div class="cv-h">Experience</div>
+
+    <div class="job">
+      <div class="job-top">
+        <div><span class="job-title">Incubation &amp; Community Lead</span> <span class="job-org">Arweave (<a href="https://arweaveindia.com">India</a> &amp; APAC)</span></div>
+        <div class="job-date">2023 &ndash; 2026</div>
+      </div>
+      <ul>
+        <li>Built a full community system spanning <b>hacker houses, debriefs, challenges, Launchpads and flagship events:</b> <b>60+ events run</b>, reaching <b>5,000+ participants</b>. Organised <b>Arweave Day India</b> (349+ international attendees), a 13-day <b>Stealth House</b> shipping sprint (10+ products shipped), recurring multi-city &amp; country-wide debrief tours, and investor-facing demo days for every cohort.</li>
+        <li>Led international presence across major crypto conferences: a Singapore <b>Hacker House</b> and Touchgrass retreats, presence at <b>Token2049</b>, side events at <b>Consensus Hong Kong</b>, and an <b>Arweave sponsor booth and side event at ETHDenver 2025</b>.</li>
+        <li>Designed and ran <b>5 Hacker Houses</b>, drawing 150+ scholars from 1,500+ applications; projects like <b>ARlink, BetterIDEa, Orbit</b> went on to raise a <b>$2.5M seed and get acquired</b>.</li>
+        <li>Built and led a <b>3-month Launchpad</b> incubation track supporting <b>40+</b> post-Hackerhouse founders through to follow-on funding, including founder operations, end-to-end legal documentation, receiving funds, and investor meetings.</li>
+        <li>Owned the organisational stack end-to-end: venue sourcing, participation funnels, daily shipping rhythm, demo day, and founder follow-through.</li>
+        <li>Led and managed content IP initiatives: The <b>Winston Show</b>, <b>Humanity &amp; Heritage Series</b>, and UGC campaigns, generating <b>70k+ views</b>.</li>
+        <li>Set up and grew the Discord community from zero to several thousand members, owning moderation, support channels, and partner coordination.</li>
+        <li>Built <b>Clickoor</b> (<a href="https://clickoor.ar.io">clickoor.ar.io</a>), a custom hardware device built from scratch using a Raspberry Pi, 3D-printed case, and Web3 wallet integration.</li>
+        <li>Generated several million impressions on <a href="https://x.com/arweaveindia">Arweaveindia X</a> through content creation and developer advocacy campaigns.</li>
+        <li>Supported production feedback and user onboarding campaigns for <a href="https://aodevbot.io">aodevbot.io</a> and <a href="https://onememory.xyz/">onememory.xyz</a>.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <div><span class="job-title">Regional Lead: Community Expansion</span> <span class="job-org">Zeeve</span></div>
+        <div class="job-date">2022-23</div>
+      </div>
+      <ul>
+        <li>Onboarded <b>2,000+ recurring users</b> and <b>5,000+ developers</b> building on Zeeve within 6 months.
+          <ul>
+            <li>Organised 15+ regional events.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <div><span class="job-title">Research Lead</span> <span class="job-org">EC Council Institute</span></div>
+        <div class="job-date">2021-22</div>
+      </div>
+      <ul>
+        <li>Led 10+ cybersecurity and AI research programs focused on cyberkill chains, AI in data centres, advanced data processing, building out the institute's early research programs and community with participants from 8 different countries.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <div><span class="job-title">Organising, Mentoring &amp; Judging</span> <span class="job-org">Global hackathons</span></div>
+        <div class="job-date">2020 &ndash; currently volunteering</div>
+      </div>
+      <ul>
+        <li>Mentored and judged <b>40+ hackathons globally</b>, including university programs at Stanford, Columbia, UCSD, Arizona, UofT and the IITs.</li>
+        <li>Organised <b>12 large-scale hackathons</b> (7 online and 5 offline) with <b>600+ participants</b> each, plus event tours leading up to them.
+          <ul>
+            <li>On the organisational side for reputable hackathons including <b><a href="https://hackthisfall.tech/">Hack This Fall</a></b> and <b><a href="https://hackthemountain.tech/">Hack The Mountains</a></b>.</li>
+          </ul>
+        </li>
+        <li>Handled production for a large-scale gaming event — <b>Free Fire National Qualifiers</b> — with <b>2,000+ attendees</b> (April 2026).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cv-section">
+    <div class="cv-h">Skills</div>
+    <div class="skills-line">Ecosystem Development · Community Design &amp; Development · Incubation &amp; Launchpad Systems · Large-Scale International Event Organisation · Operations · Founder Operations · Public Speaking · Cybersecurity Research</div>
+  </div>
+
+  <div class="cv-section">
+    <div class="cv-h">Certifications</div>
+    <div class="skills-line">CEH v11 &middot; CHFI &middot; <a href="https://www.credly.com/badges/9271d876-f003-4b3d-9fc7-fc1a2bf41fa0?source=linked_in_profile">MTA</a> &middot; <a href="https://www.credly.com/badges/088d228a-c9fb-4ed1-95f0-22b84eef2a8a/linked_in_profile">SC-200</a> &middot; <a href="https://www.credly.com/badges/ceebde04-ab81-4f05-b8cf-121db1d3a057/linked_in_profile">SC-900</a> &middot; DFIR &middot; Top 4% on <a href="https://tryhackme.com/p/cybersick">TryHackMe</a></div>
+  </div>
+
+  <div class="cv-section" style="margin-bottom:0;">
+    <div class="cv-h">Education</div>
+    <div class="edu-row">
+      <div><span class="what">Research Scholar</span> — <span class="where">EC-Council University</span></div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
