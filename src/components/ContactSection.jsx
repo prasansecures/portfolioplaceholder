@@ -24,6 +24,9 @@ export default function ContactSection() {
           <a className="btn ghost" href="https://t.me/prasansinghh" target="_blank" rel="noreferrer">
             Telegram
           </a>
+          <a className="btn ghost" href="./Prasan Singh - CV (Simple).html">
+            View CV →
+          </a>
         </div>
       </div>
       <div className="wrap">
