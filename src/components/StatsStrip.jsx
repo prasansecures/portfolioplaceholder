@@ -1,10 +1,10 @@
 const STATS = [
-  { v: '4', l: 'hacker houses &\nincubation launchpads' },
-  { v: <>150<em>+</em></>, l: 'scholars from\n1500+ applications' },
-  { v: <><em>$</em>2.5M</>, l: 'seed raised by ARlink\n· HH2 graduate' },
-  { v: <>349<em>+</em></>, l: 'attendees ·\narweave day india' },
-  { v: <>4000<em>+</em></>, l: 'builders reached\n· city debriefs' },
-  { v: <>3<em>yr</em></>, l: 'building the arweave\nasia operations system' },
+  { v: <>8<em>yrs</em></>, l: 'tech community &\necosystem work' },
+  { v: <>16,000<em>+</em></>, l: 'participants\nacross events' },
+  { v: <>200<em>+</em></>, l: 'events\nglobally' },
+  { v: '5', l: 'hacker houses\n& incubations' },
+  { v: <>40<em>+</em></>, l: 'hackathons\nmentored & judged' },
+  { v: <>20<em>+</em></>, l: 'speaker\nsessions' },
 ];
 
 export default function StatsStrip() {

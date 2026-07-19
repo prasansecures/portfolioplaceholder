@@ -5,11 +5,13 @@ export default function Hero() {
         <span className="mono">Ecosystem architect · community &amp; events</span>
       </div>
       <h1 className="lede rv">
-        I build founder
+        I build <em>Communities</em>
         <br />
-        ecosystems that turn
+        &amp; Founder ecosystems
         <br />
-        builders into <em>funded teams.</em>
+        that turn builders into
+        <br />
+        <em>funded teams.</em>
       </h1>
       <p className="hero-sub rv">
         I built{' '}
@@ -18,8 +20,8 @@ export default function Hero() {
             Arweave India
           </a>
         </strong>{' '}
-        — four hacker houses, incubation programs designed around the projects, and flagship events across Asia
-        — the community systems shaping how a global ecosystem grows.
+        — five hacker houses, incubation programs designed around projects, and flagship events across Asia
+        — the community systems that shape how a global ecosystem grows.
       </p>
       <div className="roles rv">
         <span className="mono" style={{ color: 'var(--accent)' }}>

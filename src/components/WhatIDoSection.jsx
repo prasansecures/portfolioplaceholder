@@ -6,13 +6,13 @@ const PILLARS = [
   },
   {
     n: '02',
-    title: 'Programs & events',
+    title: 'Events & Programs',
     body: 'Hacker houses, residencies, flagship conferences. Designed and run end to end.',
   },
   {
     n: '03',
     title: 'Community storytelling',
-    body: 'Public archives, video, and rituals that keep people coming back.',
+    body: 'Designing what the communities resonates with, and stays for.',
   },
 ];
 
@@ -20,7 +20,7 @@ const PROGRAMS = [
   { label: '200+ events, internationally', body: 'hackathons · conferences · hacker houses · demo days · dinners · touchgrass' },
   { label: 'Launchpad', body: '3-month incubation · 40+ founders' },
   { label: '20+ speaker sessions', body: 'keynotes · guest lectures · mentoring' },
-  { label: 'Country-wide event tours', body: 'Bangalore · Hyderabad · Vadodara' },
+  { label: 'Country-wide event tours', body: 'High intensity meetups that lead to bigger events.' },
 ];
 
 export default function WhatIDoSection() {
