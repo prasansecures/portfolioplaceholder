@@ -9,6 +9,9 @@ export default function Header() {
           <span className="avail">
             <span className="dot"></span> open to work
           </span>
+          <a className="btn ghost" href="./Prasan Singh - CV (Simple).html">
+            View CV →
+          </a>
           <a className="btn" href="https://cal.com/prasan-singh/15min" target="_blank" rel="noreferrer">
             Book 15 min →
           </a>
