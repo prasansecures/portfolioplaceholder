@@ -224,25 +224,10 @@
 </main>
 
 <div class="cv-actions">
-  <a class="primary" href="#" onclick="window.print();return false;">Download CV ↓</a>
+  <a class="primary" href="#" data-action="print">Download CV ↓</a>
   <a href="mailto:hi@prasansingh.com">Get in touch</a>
 </div>
 
-<script>
-  (function () {
-    var sheet = document.querySelector('.sheet');
-    function fit() {
-      sheet.style.transform = '';
-      if (window.innerWidth > 900) return;
-      var w = sheet.getBoundingClientRect().width;
-      if (!w) return;
-      var scale = Math.min(1, (window.innerWidth - 20) / w);
-      var tx = Math.max(0, (window.innerWidth - w * scale) / 2);
-      sheet.style.transform = 'translateX(' + tx + 'px) scale(' + scale + ')';
-    }
-    window.addEventListener('resize', fit);
-    setTimeout(fit, 200);
-  })();
-</script>
+<script src="/cv.js"></script>
 </body>
 </html>
