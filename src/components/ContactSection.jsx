@@ -1,3 +1,6 @@
+import ActionLink from './ActionLink';
+import links from '../data/links';
+
 export default function ContactSection() {
   return (
     <section className="contact">
@@ -9,24 +12,24 @@ export default function ContactSection() {
           Need the next ecosystem program, flagship event, or community engine <em>built?</em>
         </h2>
         <div className="channels rv">
-          <a className="btn" href="https://cal.com/prasan-singh/15min" target="_blank" rel="noreferrer">
+          <ActionLink href={links.booking}>
             Book 15 min →
-          </a>
-          <a className="btn ghost" href="mailto:hi@prasansingh.com">
+          </ActionLink>
+          <ActionLink href={links.email} variant="ghost">
             hi@prasansingh.com
-          </a>
-          <a className="btn ghost" href="https://x.com/prasansinghh" target="_blank" rel="noreferrer">
+          </ActionLink>
+          <ActionLink href={links.x} variant="ghost">
             𝕏 @prasansinghh
-          </a>
-          <a className="btn ghost" href="https://www.linkedin.com/in/prasan-singh" target="_blank" rel="noreferrer">
+          </ActionLink>
+          <ActionLink href={links.linkedin} variant="ghost">
             LinkedIn
-          </a>
-          <a className="btn ghost" href="https://t.me/prasansinghh" target="_blank" rel="noreferrer">
+          </ActionLink>
+          <ActionLink href={links.telegram} variant="ghost">
             Telegram
-          </a>
-          <a className="btn ghost" href="./Prasan Singh - CV (Simple).html">
+          </ActionLink>
+          <ActionLink href={links.cv} variant="ghost">
             View CV →
-          </a>
+          </ActionLink>
         </div>
       </div>
       <div className="wrap">

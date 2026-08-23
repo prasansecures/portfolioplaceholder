@@ -1,3 +1,6 @@
+import ActionLink from './ActionLink';
+import links from '../data/links';
+
 export default function Header() {
   return (
     <header>
@@ -9,12 +12,12 @@ export default function Header() {
           <span className="avail">
             <span className="dot"></span> open to work
           </span>
-          <a className="btn ghost" href="./Prasan Singh - CV (Simple).html">
+          <ActionLink href={links.cv} variant="ghost">
             View CV →
-          </a>
-          <a className="btn" href="https://cal.com/prasan-singh/15min" target="_blank" rel="noreferrer">
+          </ActionLink>
+          <ActionLink href={links.booking}>
             Book 15 min →
-          </a>
+          </ActionLink>
         </div>
       </div>
     </header>

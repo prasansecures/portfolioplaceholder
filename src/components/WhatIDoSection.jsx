@@ -1,3 +1,5 @@
+import SectionHead from './SectionHead';
+
 const PILLARS = [
   {
     n: '01',
@@ -26,10 +28,7 @@ const PROGRAMS = [
 export default function WhatIDoSection() {
   return (
     <section className="blk wrap" style={{ paddingTop: 0 }}>
-      <div className="sec-head rv">
-        <div className="sec-title">What I do</div>
-        <span className="sec-num">/ 02 — the work</span>
-      </div>
+      <SectionHead title="What I do" number="/ 02 — the work" />
       <div className="pillars rv">
         {PILLARS.map((p) => (
           <div className="pillar" key={p.n}>

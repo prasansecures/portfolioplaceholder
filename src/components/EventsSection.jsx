@@ -1,6 +1,9 @@
+import SectionHead from './SectionHead';
+import links from '../data/links';
+
 const WORK = [
   {
-    href: 'https://x.com/arweaveindia/status/1826639493417631960?s=20',
+    href: links.events.hackerHouses,
     name: 'Hacker Houses',
     desc: '4 incubation-led residency programs. Alumni include ARlink ($2.5M seed), plus BetterIDEa & 0rbit — acquired by the foundation.',
     tag: (
@@ -10,7 +13,7 @@ const WORK = [
     ),
   },
   {
-    href: 'https://x.com/arweaveindia/status/1968299806788604234?s=20',
+    href: links.events.stealthHouse,
     name: 'Stealth House',
     desc: 'A 13-day shipping sprint — ~12 builders, strangers to a team, ten products out the door.',
     tag: (
@@ -20,7 +23,7 @@ const WORK = [
     ),
   },
   {
-    href: 'https://x.com/arweaveindia/status/1920122115421802771?s=20',
+    href: links.events.arweaveDayIndia,
     name: 'Arweave Day India',
     desc: 'The flagship conference — 349+ attendees, Sam Williams keynote, two days.',
     tag: (
@@ -30,7 +33,7 @@ const WORK = [
     ),
   },
   {
-    href: 'https://x.com/aoTheComputer/status/1974173677647192441?s=20',
+    href: links.events.singaporeHackerHouse,
     name: 'Singapore Hacker House',
     desc: 'The consumer wave — a mature cohort shipping user-facing apps on mainnet.',
     tag: (
@@ -44,10 +47,7 @@ const WORK = [
 export default function EventsSection() {
   return (
     <section className="blk wrap">
-      <div className="sec-head rv">
-        <div className="sec-title">Events</div>
-        <span className="sec-num">/ 01 — proof</span>
-      </div>
+      <SectionHead title="Events" number="/ 01 — proof" />
       <p
         className="mono rv"
         style={{ margin: '-24px 0 34px', textTransform: 'none', letterSpacing: '0.02em', fontSize: 13, color: 'var(--ink-soft)' }}
@@ -65,7 +65,7 @@ export default function EventsSection() {
       </div>
       <div style={{ marginTop: 20 }} className="rv">
         <span className="mono">+ launchpad cohorts, city debriefs &amp; side events · </span>
-        <a className="link mono" href="https://x.com/arweaveindia" target="_blank" rel="noreferrer">
+        <a className="link mono" href={links.arweaveIndiaX} target="_blank" rel="noreferrer">
           the full public log ↗
         </a>
       </div>
